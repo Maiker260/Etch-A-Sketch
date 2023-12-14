@@ -1,6 +1,7 @@
 let gridSize = document.querySelector("#grid_size").value;
 const container = document.querySelector(".container");
 
+
 // Function to create the Grid
 
 function createGrid() {
@@ -16,8 +17,6 @@ function createGrid() {
     }
 }
 
-createGrid();
-
 // Function to change the Grid Size depending on the User Selection
 
 function changeGridSize() {
@@ -25,13 +24,13 @@ function changeGridSize() {
     
     rangeSelector.addEventListener("change", () => {
         gridSize = document.querySelector("#grid_size").value;
-        console.log(gridSize)
         addCurrentGridSizeValue()
         resetGridSize();
+        cellsSelected();
     });
 }
 
-changeGridSize();
+
 
 // Function to modify the Current Grid Size Value in the UI
 
@@ -40,8 +39,8 @@ function addCurrentGridSizeValue() {
     
     grid_size_toggle.textContent = "";
     grid_size_toggle.textContent = ` ${gridSize} x ${gridSize}`;
-
 }
+
 
 // Function to Reset the current Grid Size
 function resetGridSize() {
@@ -49,17 +48,45 @@ function resetGridSize() {
     createGrid();
 }
 
+
 // Function to change the color or the cell selected
 
 function changeColorCells() {
-    container.addEventListener ("mouseover", (event) => {
-        if (event.target.classList.contains("cells")) {
-            event.target.classList.add("cellsActive");
-        };
+    container.addEventListener ("click", () => {
+        container.addEventListener ("mouseover", (event) => {
+            if (event.target.classList.contains("cells")) {
+                event.target.classList.add("cellsActive");
+            };
+        })
+    })
+}
+
+
+
+// Function to select all the cells
+
+function cellsSelected() {
+    const cells = document.querySelectorAll(".cells");
+
+    cells.forEach((cell) => {
+        clearGrid(cell);
     });
 }
 
+
+// Function to clear the Grid
+function clearGrid(value) {
+    const clear = document.querySelector("#clear");
+
+    clear.addEventListener("click", () => {
+        if (value.classList.contains("cellsActive")) {
+            value.classList.remove("cellsActive");
+        }
+    });
+}
+
+
+createGrid();
+changeGridSize();
 changeColorCells();
-
-
-
+cellsSelected()
