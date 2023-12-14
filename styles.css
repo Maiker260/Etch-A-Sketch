@@ -1,6 +1,33 @@
-.grid {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ededed;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin: 100px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.cells {
+    width: 100%;
     border: 1px solid black;
     background-color: #09f;
-    width: 10px;
-    height: 10px;
+}
+
+.cellsActive {
+    background-color: green;
 }
