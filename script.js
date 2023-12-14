@@ -1,3 +1,5 @@
+
+// Function to create the Grid
 const container = document.querySelector(".container");
 
 function createGrid() {
@@ -9,8 +11,20 @@ function createGrid() {
             cell.classList.add("cells");
             row.appendChild(cell);
         }
-            container.appendChild(row);
+        container.appendChild(row);
     }
 }
 
 createGrid();
+
+// Function to change the color or the cell selected
+
+function changeColorCells() {
+    container.addEventListener ("mouseover", (event) => {
+        if (event.target.classList.contains("cells")) {
+            event.target.classList.add("cellsActive");
+        };
+    });
+}
+
+changeColorCells();
