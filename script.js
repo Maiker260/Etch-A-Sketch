@@ -1,12 +1,14 @@
 
 // Function to create the Grid
+let gridSize = 6;
+
 const container = document.querySelector(".container");
 
 function createGrid() {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < gridSize; i++) {
         const row = document.createElement("div");
         row.classList.add("row");
-        for (let j = 0; j < 7; j++) {
+        for (let j = 0; j < gridSize; j++) {
             const cell = document.createElement("div");
             cell.classList.add("cells");
             row.appendChild(cell);
@@ -16,6 +18,7 @@ function createGrid() {
 }
 
 createGrid();
+
 
 // Function to change the color or the cell selected
 
@@ -28,3 +31,7 @@ function changeColorCells() {
 }
 
 changeColorCells();
+
+
+// Function to change the Grid Size depending on the User input
+
