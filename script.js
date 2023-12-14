@@ -1,8 +1,7 @@
+let gridSize = document.querySelector("#grid_size").value;
+const container = document.querySelector(".container");
 
 // Function to create the Grid
-let gridSize = 6;
-
-const container = document.querySelector(".container");
 
 function createGrid() {
     for (let i = 0; i < gridSize; i++) {
@@ -19,6 +18,36 @@ function createGrid() {
 
 createGrid();
 
+// Function to change the Grid Size depending on the User Selection
+
+function changeGridSize() {
+    const rangeSelector = document.querySelector("#grid_size");
+    
+    rangeSelector.addEventListener("change", () => {
+        gridSize = document.querySelector("#grid_size").value;
+        console.log(gridSize)
+        addCurrentGridSizeValue()
+        resetGridSize();
+    });
+}
+
+changeGridSize();
+
+// Function to modify the Current Grid Size Value in the UI
+
+function addCurrentGridSizeValue() {
+    const grid_size_toggle = document.querySelector("#current_value");
+    
+    grid_size_toggle.textContent = "";
+    grid_size_toggle.textContent = ` ${gridSize} x ${gridSize}`;
+
+}
+
+// Function to Reset the current Grid Size
+function resetGridSize() {
+    container.textContent = "";
+    createGrid();
+}
 
 // Function to change the color or the cell selected
 
@@ -33,5 +62,4 @@ function changeColorCells() {
 changeColorCells();
 
 
-// Function to change the Grid Size depending on the User input
 
