@@ -15,16 +15,24 @@
             </label>
         </div>
         <div class="canvas">
-            <div class="grid_options left">
-                <label for="color_picker">Choose a Color: 
-                    <input class="btn_option" type="color" id="color_picker" value="#09f" />
-                </label>
-                <button id="rainbow" class="btn_option">Rainbow Mode</button>
+            <div class="grid_options">
+                <div class="color_ctn">
+                    <label class="color_label" for="cells_color_picker">Cells Color: 
+                        <input class="color_option" type="color" id="cells_color_picker" value="#10ED0C" />
+                    </label>
+                </div>
+                <div class="color_ctn">
+                    <label class="color_label" for="grid_color_picker">Grid Color: 
+                        <input class="color_option" type="color" id="grid_color_picker" value="#0099ff" />
+                    </label>
+                </div>
+                <button id="rainbow" class="btn_option left">Rainbow Mode</button>
             </div>
             <div class="container"></div>
-            <div class="grid_options right">
-                <button id="eraser" class="btn_option">Eraser</button>
-                <button id="clear" class="btn_option">Clear</button>
+            <div class="grid_options ">
+                <button id="Draw" class="btn_option right">Draw</button>
+                <button id="eraser" class="btn_option right">Eraser</button>
+                <button id="clear" class="btn_option right">Clear</button>
             </div>
         </div>
         <p class="press_click">Press Click to Start</p>

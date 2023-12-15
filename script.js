@@ -1,5 +1,8 @@
 let gridSize = document.querySelector("#grid_size").value;
 const container = document.querySelector(".container");
+const cellsCurrentColor = document.querySelector("#cells_color_picker");
+const gridCurrentColor = document.querySelector("#grid_color_picker");
+const cellsActive = document.querySelectorAll(".cellsActive");
 
 
 // Function to create the Grid
@@ -17,6 +20,7 @@ function createGrid() {
     }
 }
 
+
 // Function to change the Grid Size depending on the User Selection
 
 function changeGridSize() {
@@ -29,7 +33,6 @@ function changeGridSize() {
         cellsSelected();
     });
 }
-
 
 
 // Function to modify the Current Grid Size Value in the UI
@@ -49,16 +52,35 @@ function resetGridSize() {
 }
 
 
-// Function to change the color or the cell selected
+// Function to Apply the new color in the Grid
 
-function changeColorCells() {
+function applyColor() {
     container.addEventListener ("click", () => {
         container.addEventListener ("mouseover", (event) => {
             if (event.target.classList.contains("cells")) {
                 event.target.classList.add("cellsActive");
+
+                console.log(event.target);
+                console.log(cellsCurrentColor.value);
+                event.target.style.backgroundColor = cellsCurrentColor.value;
+
             };
         })
     })
+}
+
+// Function to change the color of the cells
+
+function changeCellColor(colorin) {
+const cellsColorBtn = document.querySelector("#cells_color_picker");
+
+    cellsColorBtn.addEventListener("change", () => {
+        console.log(colorin);
+
+
+        // colorin.target.style.backgroundColor = cellsCurrentColor.value;
+        // colorin.style.backgroundColor = cellsCurrentColor.value;
+    });    
 }
 
 
@@ -86,7 +108,10 @@ function clearGrid(value) {
 }
 
 
+
+
+
 createGrid();
 changeGridSize();
-changeColorCells();
+applyColor();
 cellsSelected()

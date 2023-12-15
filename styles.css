@@ -26,6 +26,23 @@
     font-size: 1.3rem;
 }
 
+.color_option {
+    display: block;
+    font-size: 1.1rem;
+    width: 10em;
+    height: 3em;
+    cursor: pointer;
+    border-radius: 0.5em;
+}
+
+.color_ctn {
+    margin-top: 10px;
+}
+
+.color_label {
+    padding-left: 0.3em;
+} 
+
 .btn_option {
     display: block;
     font-size: 1.1rem;
@@ -36,8 +53,12 @@
     border-radius: 0.5em;
 }
 
+.left {
+    margin-top: 1.9em;
+}
+
 .right {
-    margin-top: 1.2em;
+    margin-top: 1.9em;
 }
 
 .container {
@@ -65,7 +86,7 @@
 }
 
 .cellsActive {
-    background-color: green;
+    background-color: #10ED0C;
 }
 
 .press_click {
