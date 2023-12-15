@@ -2,7 +2,6 @@ let gridSize = document.querySelector("#grid_size").value;
 const container = document.querySelector(".container");
 const cellsCurrentColor = document.querySelector("#cells_color_picker");
 const gridCurrentColor = document.querySelector("#grid_color_picker");
-const cellsActive = document.querySelectorAll(".cellsActive");
 
 
 // Function to create the Grid
@@ -30,7 +29,8 @@ function changeGridSize() {
         gridSize = document.querySelector("#grid_size").value;
         addCurrentGridSizeValue()
         resetGridSize();
-        cellsSelected();
+        clearCells();
+        changeGridColor();
     });
 }
 
@@ -58,60 +58,76 @@ function applyColor() {
     container.addEventListener ("click", () => {
         container.addEventListener ("mouseover", (event) => {
             if (event.target.classList.contains("cells")) {
-                event.target.classList.add("cellsActive");
-
-                console.log(event.target);
-                console.log(cellsCurrentColor.value);
-                event.target.style.backgroundColor = cellsCurrentColor.value;
-
+                changeCellColor(event.target)
             };
         })
     })
 }
 
+
 // Function to change the color of the cells
 
-function changeCellColor(colorin) {
-const cellsColorBtn = document.querySelector("#cells_color_picker");
+function changeCellColor(event) {
+    let cellColorSelected = cellsCurrentColor.value;
 
-    cellsColorBtn.addEventListener("change", () => {
-        console.log(colorin);
-
-
-        // colorin.target.style.backgroundColor = cellsCurrentColor.value;
-        // colorin.style.backgroundColor = cellsCurrentColor.value;
-    });    
+    event.style.backgroundColor = cellColorSelected;
 }
 
 
+// Function to change the color of the cells
 
-// Function to select all the cells
-
-function cellsSelected() {
-    const cells = document.querySelectorAll(".cells");
-
-    cells.forEach((cell) => {
-        clearGrid(cell);
-    });
+function changeGridColor() {
+    const gridy = document.querySelectorAll(".cells");
+    
+    gridy.forEach((grid) => {
+        testy(grid)
+    })
 }
 
 
-// Function to clear the Grid
-function clearGrid(value) {
-    const clear = document.querySelector("#clear");
+// // Function to change the color of the Grid
 
-    clear.addEventListener("click", () => {
-        if (value.classList.contains("cellsActive")) {
-            value.classList.remove("cellsActive");
-        }
-    });
-}
+// function testy(value) {
 
+//     let gridColorSelected = gridCurrentColor.value;
 
-
+//     if (value.classList.contains("cells")) {
+//         value.removeAttribute("style")
+//         value.style.backgroundColor = gridColorSelected;
+//     }
+// }
 
 
-createGrid();
-changeGridSize();
-applyColor();
-cellsSelected()
+// gridCurrentColor.addEventListener("input", () => {
+//     changeGridColor();
+// });
+
+
+// // Function to select all the cells in the Grid and clear them.
+
+// function clearCells() {
+//     const cells = document.querySelectorAll(".cells");
+
+//     cells.forEach((cell) => {
+//         clearGridCells(cell);
+//     });
+// }
+
+
+// // Function to clear the Grid
+// function clearGridCells(value) {
+//     const clear = document.querySelector("#clear");
+
+//     clear.addEventListener("click", () => {
+//         if (value.classList.contains("cells")) {
+//             changeGridColor();
+//         }
+//     });
+// }
+
+
+
+// createGrid();
+// changeGridSize();
+// applyColor();
+// clearCells()
