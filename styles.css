@@ -75,7 +75,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-basis: 100%;
-    background-color: yellow;
     border: 1px solid black;
 }
 
@@ -102,3 +101,4 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
