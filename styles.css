@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #ededed;
+    /* background-color: #ededed; */
+    background-color: #181818;
+    color: #ededed;
 }
 
 .title {
@@ -33,6 +35,7 @@
     height: 3em;
     cursor: pointer;
     border-radius: 0.5em;
+    
 }
 
 .color_ctn {
@@ -51,6 +54,7 @@
     margin-top: 1em;
     cursor: pointer;
     border-radius: 0.5em;
+    border: 1px solid #ededed;
 }
 
 .left {
@@ -67,7 +71,7 @@
     width: 30em;
     height: 30em;
     min-width: 30em;
-    border: 1px solid black;
+    border: 1px solid #181818;
     margin: 0 10em;
 }
 
@@ -75,12 +79,12 @@
     display: flex;
     justify-content: space-evenly;
     flex-basis: 100%;
-    border: 1px solid black;
+    border: 1px solid #181818;
 }
 
 .cells {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #181818;
     background-color: #09f;
 }
 
@@ -91,14 +95,15 @@
 }
 
 footer {
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 1.4rem;
     width: 100%;
     height: 2em;
-    border: 1px solid black;
+    border: 1px solid #ededed;
     justify-content: center;
     align-items: center;
     position: fixed;
     bottom: 0;
 }
-
