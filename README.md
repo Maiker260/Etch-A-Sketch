@@ -2,4 +2,4 @@
 Etch-A-Sketch Project
 
 
-https://othei26.github.io/Etch-A-Sketch/
+https://maiker260.github.io/Etch-A-Sketch/
